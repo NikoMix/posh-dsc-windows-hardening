@@ -4,7 +4,7 @@ Configuration CIS_Windows10_v181 {
         [string[]]$NodeName ='localhost'
         )
  
-    Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
+    Import-DscResource -ModuleName 'PSDscResources'
     Import-DscResource -ModuleName 'AuditPolicyDsc'
     Import-DscResource -ModuleName 'SecurityPolicyDsc'
  
@@ -3827,15 +3827,6 @@ Configuration CIS_Windows10_v181 {
             ValueName  = 'SetDisablePauseUXAccess'
             ValueType  = 'DWord'
             ValueData  = '1'
-        }
-
-        # 19.1.3.1 (L1) Ensure 'Enable screen saver' is set to 'Enabled'
-        Registry 'ScreenSaveActive' {
-            Ensure      = 'Present'
-            Key         = 'HKEY_CURRENT_USER\SOFTWARE\Policies\Microsoft\Windows\Control Panel\Desktop'
-            ValueName   = 'ScreenSaveActive'
-            ValueType   = 'String'
-            ValueData   = '1'
         }
 
         # 19.1.3.2 (L1) Ensure 'Force specific screen saver: Screen saver executable name' is set to 'Enabled: scrnsave.scr'

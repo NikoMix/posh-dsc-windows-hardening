@@ -5,7 +5,7 @@ Configuration CIS_WindowsServer2016_v110 {
        )
 
 
-   Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
+   Import-DscResource -ModuleName 'PSDscResources'
    Import-DscResource -ModuleName 'AuditPolicyDsc'
    Import-DscResource -ModuleName 'SecurityPolicyDsc'
 

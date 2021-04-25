@@ -4,7 +4,7 @@ Configuration AzSC_CCEv4_WindowsServer2016 {
         [string[]]$NodeName ='localhost'
         )
  
-    Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
+    Import-DscResource -ModuleName 'PSDscResources'
     Import-DscResource -ModuleName 'AuditPolicyDsc'
     Import-DscResource -ModuleName 'SecurityPolicyDsc'
  

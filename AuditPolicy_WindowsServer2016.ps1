@@ -5,10 +5,12 @@ Configuration AuditPolicy_WindowsServer2016
         [String] $NodeName = 'localhost'
     )
 
+    Import-DscResource -ModuleName 'PSDscResources'
     Import-DscResource -ModuleName 'AuditPolicyDsc'
     Import-DscResource -ModuleName 'ComputerManagementDsc'
     Import-DscResource -ModuleName 'SecurityPolicyDsc'
-    Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
+    
+    # Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
 
     Node $NodeName
     {

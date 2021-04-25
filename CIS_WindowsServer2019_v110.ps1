@@ -4,8 +4,7 @@ Configuration CIS_WindowsServer2019_v110 {
        [string[]]$NodeName ='localhost'
        )
 
-
-   Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
+   Import-DscResource -ModuleName 'PSDscResources'
    Import-DscResource -ModuleName 'AuditPolicyDsc'
    Import-DscResource -ModuleName 'SecurityPolicyDsc'
 
@@ -2001,7 +2000,7 @@ Configuration CIS_WindowsServer2019_v110 {
       }
        
        # 18.8.31.2 (L2) Ensure 'Allow upload of User Activities' is set to 'Disabled'
-       Registry 'AllowCrossDeviceClipboard' {
+       Registry 'UploadUserActivities' {
          Ensure     = 'Present'
          Key        = 'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\System'
          ValueName  = 'UploadUserActivities'
